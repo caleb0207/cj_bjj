@@ -11,6 +11,9 @@
     </head>
     <body>
         <div class="page-header">
+        {% if user.is_authenticated %}
+            <a href="{% url 'notice_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+        {% endif %}
             <h1><a href="/">청주 주짓수 커뮤니티</a></h1>
         </div>
         <div class="content container">

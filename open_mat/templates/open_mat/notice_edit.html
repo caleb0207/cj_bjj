@@ -1,0 +1,9 @@
+{% extends 'open_mat/base.html' %}
+
+{% block content %}
+    <h1>New notice</h1>
+    <form method="POST" class="notice-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+{% endblock %}
