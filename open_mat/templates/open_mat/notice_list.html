@@ -1,37 +1,17 @@
-{% load static %}
-<html>
-    <head>
-        <title>청주에서 주짓수하는 사람들 모여라!</title>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@300&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="{% static 'css/open_mat.css' %}">
-    </head>
-    <body>
-        <div class="page-header">
-            <h1><a href="/">오픈매트 일정</a></h1>
-        </div>
+{% extends 'open_mat/base.html' %}
 
-        <div class="content container">
-            <div class="row">
-                <div class="col-md-8">
-                    {% for notice in notices %}
-                        <div class="notice">
-                            <div class="date">
-                                <p>작성일시: {{ notice.published_date }}</p>
-                            </div>
-                            <h1><a href="">{{ notice.title }}</a></h1>
-                            <p>{{ notice.text|linebreaksbr }}</p>
-                            <div class="date-and-location">
-                                <p>일시: {{ notice.event_date }}</p>
-                                <p>장소: {{ notice.location }}</p>
-                            </div>
-                        </div>
-                    {% endfor %}
-                </div>
+{% block content %}
+    {% for notice in notices %}
+        <div class="notice">
+            <div class="date">
+                <p>작성일시: {{ notice.published_date }}</p>
+            </div>
+            <h1><a href="">{{ notice.title }}</a></h1>
+            <p>{{ notice.text|linebreaksbr }}</p>
+            <div class="date-and-location">
+                <p>일시: {{ notice.event_date }}</p>
+                <p>장소: {{ notice.location }}</p>
             </div>
         </div>
-    </body>
-</html>
+    {% endfor %}
+{% endblock %}

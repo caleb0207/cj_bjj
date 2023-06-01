@@ -1,0 +1,25 @@
+{% load static %}
+<html>
+    <head>
+        <title>청주에서 주짓수하는 사람들 모여라!</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'css/open_mat.css' %}">
+    </head>
+    <body>
+        <div class="page-header">
+            <h1><a href="/">청주 주짓수 커뮤니티</a></h1>
+        </div>
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-8">
+                {% block content %}
+                {% endblock %}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
