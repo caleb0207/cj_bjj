@@ -6,7 +6,7 @@
             <div class="date">
                 <p>작성일시: {{ notice.published_date }}</p>
             </div>
-            <h1><a href="">{{ notice.title }}</a></h1>
+            <h1><a href="{% url 'notice_detail' pk=notice.pk %}">{{ notice.title }}</a></h1>
             <p>{{ notice.text|linebreaksbr }}</p>
             <div class="date-and-location">
                 <p>일시: {{ notice.event_date }}</p>

@@ -1,0 +1,17 @@
+{% extends 'open_mat/base.html' %}
+
+{% block content %}
+    <div class="notice">
+        {% if notice.published_date %}
+            <div class="date">
+                {{ notice.published_date }}
+            </div>
+        {% endif %}
+        <h1>{{ notice.title }}</h1>
+        <p>{{ notice.text|linebreaksbr }}</p>
+        <div class="date-and-location">
+            <p>일시: {{ notice.event_date }}</p>
+            <p>장소: {{ notice.location }}</p>
+        </div>
+    </div>
+{% endblock %}
